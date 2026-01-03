@@ -1,9 +1,10 @@
+import ArgumentParser
 import IsolationExplore
 
 @available(macOS 13.0, *)
 @main
-struct IsolationExploreApp {
-    static func main() async {
+struct IsolationExploreApp: AsyncParsableCommand {
+    func run() async throws {
         print("=== Swift Isolation Exploration ===\n")
         
         // Demonstrate basic isolation concepts

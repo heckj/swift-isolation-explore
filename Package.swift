@@ -18,6 +18,9 @@ let package = Package(
             name: "IsolationExploreApp",
             targets: ["IsolationExploreApp"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-argument-parser", from: "1.4.0"),
+    ],
     targets: [
         // Library target with isolation exploration utilities
         .target(
@@ -26,6 +29,10 @@ let package = Package(
         // Executable target that uses the library
         .executableTarget(
             name: "IsolationExploreApp",
+            dependencies: ["IsolationExplore", .product(name: "ArgumentParser", package: "swift-argument-parser")]),
+        // Test target
+        .testTarget(
+            name: "IsolationExploreTests",
             dependencies: ["IsolationExplore"]),
     ]
 )

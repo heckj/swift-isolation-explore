@@ -30,16 +30,6 @@ swift build
 swift run IsolationExploreApp
 ```
 
-### Use as a Library
-
-Add this package as a dependency in your `Package.swift`:
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/heckj/swift-isolation-explore.git", from: "1.0.0")
-]
-```
-
 ## Requirements
 
 - Swift 6.2 or later

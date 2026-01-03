@@ -42,7 +42,7 @@ dependencies: [
 
 ## Requirements
 
-- Swift 5.9 or later
+- Swift 6.2 or later
 - macOS 13.0 or later
 
 ## Project Structure

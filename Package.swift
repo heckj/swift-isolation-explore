@@ -20,7 +20,6 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.4.0"),
-        .package(url: "https://github.com/apple/swift-testing", from: "0.1.0"),
     ],
     targets: [
         // Library target with isolation exploration utilities
@@ -34,6 +33,6 @@ let package = Package(
         // Test target
         .testTarget(
             name: "IsolationExploreTests",
-            dependencies: ["IsolationExplore", .product(name: "Testing", package: "swift-testing")]),
+            dependencies: ["IsolationExplore"]),
     ]
 )

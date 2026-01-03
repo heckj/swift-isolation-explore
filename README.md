@@ -1,35 +1,62 @@
-# 🖼️ 📄 Swift Repository Templates 🖼️ 📄
+# Swift Isolation Exploration
 
-Helpful file templates and guidance for repositories in github.com/swiftlang. Project maintainers should use this guidance for the root files of every repository. 
+A Swift package for exploring concurrency isolation concepts including actors, global actors (MainActor), and Sendable conformance.
 
-## 🌐 SwiftLang GitHub Organization (Org) Level 
+## Overview
 
-There is an organizational level [.github](https://github.com/swiftlang/.github) folder that optimizes for consistency across all repositories. Read more information about GitHub Org Level Files [here](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file)
+This package provides a library and an executable target for exploring and demonstrating Swift's concurrency isolation features:
 
-- CONDUCT.md**
-- SECURITY.md**
-- CONTRIBUTING.md (links to [swift.org/contributing](swift.org/contributing))
-  
-** = special exception from the Core Team in order to opt-out
+- **IsolationExplore** - A library module with utilities for exploring isolation concepts
+- **IsolationExploreApp** - An executable that demonstrates various isolation scenarios
 
-## 🏠 Repo Level 
+## Features
 
-The following files are required in each repo and are not set at Org level:
-- LICENSE  
-  If it's not Apache 2.0 with runtime exception, the Core Team will need to approve. 
-- README.md
-  
-Special Note:
-- CONTRIBUTING.md  
-  We encourage repo owners to have a custom CONTRIBUTING.md file. Many repos have different review flows, environment set up instructions, testing, and related that may help contributors AND maintainers have a better experience.
-- NOTICE or ACKNOWLEDGEMENTS  
-  A repository may need to use one of these two files to include license information and more for dependencies, vendored code, etc. Please work with the [Core Team](https://forums.swift.org/new-message?groupname=core-team) to figure out the best course of action here.
-  
-.github templates:
-- codeowners
-- pull request template
-- issue template
+- **Actor Isolation**: Demonstrates how actors provide isolation for mutable state
+- **MainActor Isolation**: Shows global actor isolation patterns
+- **Sendable Types**: Examples of Sendable conformance for safe concurrent data sharing
+- **Concurrency Examples**: Practical demonstrations using structured concurrency
+
+## Building and Running
+
+### Build the Package
+
+```bash
+swift build
+```
+
+### Run the Executable
+
+```bash
+swift run IsolationExploreApp
+```
+
+### Use as a Library
+
+Add this package as a dependency in your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/heckj/swift-isolation-explore.git", from: "1.0.0")
+]
+```
+
+## Requirements
+
+- Swift 5.9 or later
+- macOS 13.0 or later
+
+## Project Structure
+
+```
+swift-isolation-explore/
+├── Package.swift
+└── Sources/
+    ├── IsolationExplore/
+    │   └── IsolationExplore.swift
+    └── IsolationExploreApp/
+        └── main.swift
+```
 
 ## Contributing
-We welcome contributions to this repository! Please read the [Contributor Guide](swift.org/contributing) to get started. If you'd like to propose
-a new file, section, or major change, please start with an issue or start a discussion post in the category for the [Contributor Experience Workgroup](https://forums.swift.org/c/contributor-experience/110) on the Forums.
+
+Contributions are welcome! Please feel free to submit issues or pull requests.
